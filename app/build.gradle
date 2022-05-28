@@ -22,6 +22,21 @@ android {
     buildFeatures{
         viewBinding true
     }
+    flavorDimensions "default"
+    productFlavors{
+        bayar{
+            dimension "default"
+            versionCode 1
+            versionName "1.0"
+            applicationIdSuffix ".paid"
+        }
+        free{
+            dimension "default"
+            versionCode 1
+            versionName "1.0"
+            applicationIdSuffix ".free"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false

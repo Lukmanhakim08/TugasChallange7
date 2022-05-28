@@ -31,7 +31,6 @@ class DetailFilmFragment : Fragment(R.layout.fragment_detail_film) {
         getAllDetail()
     }
 
-
     private fun getAllDetail() {
         viewModelFilmFavorite = ViewModelProvider(this).get(ViewModelFilmFavorite::class.java)
         if (requireArguments().containsKey("FAVORITEFILMDATA")) {

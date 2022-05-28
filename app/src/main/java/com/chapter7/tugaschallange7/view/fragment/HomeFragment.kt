@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.chapter7.tugaschallange7.R
 import com.chapter7.tugaschallange7.databinding.FragmentHomeBinding
 import com.chapter7.tugaschallange7.mater.datastore.LoginUserManager
@@ -36,6 +37,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         loginUserManager = LoginUserManager(requireContext())
         loginUserManager.username.asLiveData().observe(viewLifecycleOwner){
             homeFragmentBinding!!.welcomeText.text = "Welcome, $it"
+        }
+        loginUserManager.image.asLiveData().observe(viewLifecycleOwner){ result ->
+            Glide.with(homeFragmentBinding!!.homeToProfile.context)
+                .load(result)
+                .error(R.drawable.profile)
+                .override(100, 100)
+                .into(homeFragmentBinding!!.homeToProfile)
         }
 
         adapter = AdapterFilm {

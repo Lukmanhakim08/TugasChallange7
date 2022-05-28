@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_nav"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFilmFragment"
+            app:destination="@id/detailFilmFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_filmFavoriteFragment"
+            app:destination="@id/filmFavoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailFilmFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.DetailFilmFragment"
+        android:label="fragment_detail_film"
+        tools:layout="@layout/fragment_detail_film" />
+    <fragment
+        android:id="@+id/filmFavoriteFragment"
+        android:name="com.chapter7.tugaschallange7.view.fragment.FilmFavoriteFragment"
+        android:label="fragment_film_favorite"
+        tools:layout="@layout/fragment_film_favorite" >
+        <action
+            android:id="@+id/action_filmFavoriteFragment_to_detailFilmFragment"
+            app:destination="@id/detailFilmFragment" />
+    </fragment>
+</navigation>
